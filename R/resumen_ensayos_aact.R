@@ -1,18 +1,18 @@
-#’ Resumen de ensayos clinicos por fase en AACT (ClinicalTrials.gov)
-#’
-#’ Conecta de forma remota al servidor PostgreSQL de AACT usando las
-#’ credenciales almacenadas en .Renviron, filtra los ensayos por patologia
-#’ y devuelve el numero de estudios y el reclutamiento medio por fase.
-#’
-#’ @param patologia Texto de busqueda de la enfermedad (ej. "Melanoma").
-#’
-#’ @return Un data.frame con el numero de ensayos y tamano muestral medio.
-#’ @export
-#’
-#’ @examples
-#’ \dontrun{
-#’ resumen_ensayos_aact("Melanoma")
-#’ }
+#' Resumen de ensayos clinicos por fase en AACT (ClinicalTrials.gov)
+#'
+#' Conecta de forma remota al servidor PostgreSQL de AACT usando las
+#' credenciales almacenadas en .Renviron, filtra los ensayos por patologia
+#' y devuelve el numero de estudios y el reclutamiento medio por fase.
+#'
+#' @param patologia Texto de busqueda de la enfermedad (ej. "Melanoma").
+#'
+#' @return Un data.frame con el numero de ensayos y tamano muestral medio.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' resumen_ensayos_aact("Melanoma")
+#' }
 resumen_ensayos_aact <- function(patologia = "Melanoma") {
   usuario <- Sys.getenv("AACT_USER")
   clave <- Sys.getenv("AACT_PASSWORD")
